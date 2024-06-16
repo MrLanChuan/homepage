@@ -1,7 +1,62 @@
-.image-container
-{
-	margin: 20px;
-	max-width: 100%;
-	width: calc(100% - 40px);
-	height: auto;
+body {
+  font-family: Arial, sans-serif;
+}
+
+.content-group {
+  position: relative; /* 为浮动元素提供参照 */
+}
+
+.title-container {
+  position: sticky;
+  top: 0; /* 保持标题容器在顶部 */
+  z-index: 10;
+  background-color: #fff;
+  border-bottom: 1px solid #ccc;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  margin: 0;
+  font-size: 1.2em;
+}
+
+.toggle-button {
+  background: none;
+  border: none;
+  color: blue;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 16px;
+  text-transform: uppercase;
+  outline: none;
+  float: right; /* 将按钮放置在标题容器的右侧 */
+  margin: 0; /* 确保按钮没有外边距 */
+}
+
+.content-area {
+  padding: 10px;
+  border-top: none; /* 移除顶部边框，避免与标题容器边框重叠 */
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  max-height: 200px; /* 初始状态，内容区域高度为0 */
+  margin-top: -1px; /* To remove double border */
+}
+
+.content-area.expanded {
+  max-height: none; /* 足够高的高度以显示所有内容 */
+}
+/* 添加 .collapsed 类定义 */
+.content-area.collapsed {
+  max-height: 200px; /* 隐藏内容区域 */
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+/* Additional styles for visual enhancement */
+.content-group {
+  border: 1px solid #eee;
+  border-radius: 4px;
 }
