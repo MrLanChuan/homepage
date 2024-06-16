@@ -27,3 +27,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+// 监听网页加载完成事件
+window.onload = function() {
+    // 滚动到页面的顶部
+    window.scrollTo(0, 0);
+};
